@@ -1,0 +1,15 @@
+# Dependencies and build (group15-portal and any nested apps)
+node_modules/
+.next/
+out/
+.turbo
+*.tsbuildinfo
+
+# Env
+.env
+.env.local
+.env*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
