@@ -6,7 +6,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
+          src="/next.svg"
           alt="Next.js logo"
           width={180}
           height={38}
@@ -32,7 +32,7 @@ export default function Home() {
           >
             <Image
               className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
+              src="/vercel.svg"
               alt="Vercel logomark"
               width={20}
               height={20}
@@ -58,8 +58,8 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
+            src="/file.svg"
+            alt=""
             width={16}
             height={16}
           />
@@ -73,8 +73,8 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
+            src="/window.svg"
+            alt=""
             width={16}
             height={16}
           />
@@ -88,8 +88,8 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
+            src="/globe.svg"
+            alt=""
             width={16}
             height={16}
           />
