@@ -2,10 +2,13 @@
 
 import { useEffect } from "react";
 import { getAnalytics, isSupported } from "firebase/analytics";
-import { app } from "@/lib/firebase";
+import { getFirebaseApp } from "@/lib/firebase";
 
 export function FirebaseAnalytics() {
   useEffect(() => {
+    const app = getFirebaseApp();
+    if (!app) return;
+
     let cancelled = false;
     void (async () => {
       if (!(await isSupported())) return;

@@ -12,14 +12,11 @@ function getFirebaseConfig() {
   };
 }
 
-function getFirebaseApp(): FirebaseApp {
+/** Returns the Firebase app, or null if NEXT_PUBLIC_FIREBASE_* env vars are not set (e.g. missing on Vercel). */
+export function getFirebaseApp(): FirebaseApp | null {
   const config = getFirebaseConfig();
   if (!config.apiKey || !config.projectId) {
-    throw new Error(
-      "Missing Firebase configuration. Add NEXT_PUBLIC_FIREBASE_* variables to .env.local (see .env.example)."
-    );
+    return null;
   }
   return getApps().length === 0 ? initializeApp(config) : getApp();
 }
-
-export const app = getFirebaseApp();
