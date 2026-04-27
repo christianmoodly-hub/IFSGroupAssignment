@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
-  getAuthErrorMessage,
+  resolveSignInError,
   signInWithEmailPassword,
   subscribeAuth,
 } from "@/lib/firebase-auth";
@@ -35,11 +35,7 @@ export default function LoginPage() {
       await signInWithEmailPassword(email.trim(), password);
       router.replace("/dashboard");
     } catch (err: unknown) {
-      const code =
-        err && typeof err === "object" && "code" in err
-          ? String((err as { code?: string }).code)
-          : "";
-      setError(getAuthErrorMessage(code || "unknown"));
+      setError(resolveSignInError(err));
     } finally {
       setSubmitting(false);
     }
