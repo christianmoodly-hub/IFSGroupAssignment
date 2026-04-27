@@ -18,26 +18,17 @@ export default function TeamPage() {
               </h2>
               <p className="mt-1 text-sm text-slate-300">{member.role}</p>
               <div className="mt-3 flex flex-wrap gap-2">
-                {label === "Both" ? (
-                  <>
-                    <span className="rounded-full bg-teal-900/50 px-2.5 py-0.5 text-xs font-medium text-teal-300 ring-1 ring-teal-700/60">
-                      BAY
-                    </span>
-                    <span className="rounded-full bg-indigo-900/50 px-2.5 py-0.5 text-xs font-medium text-indigo-300 ring-1 ring-indigo-700/60">
-                      IFS
-                    </span>
-                  </>
-                ) : (
-                  <span
-                    className={`rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ${
-                      label === "BAY"
-                        ? "bg-teal-900/50 text-teal-300 ring-teal-700/60"
-                        : "bg-indigo-900/50 text-indigo-300 ring-indigo-700/60"
-                    }`}
-                  >
-                    {label}
-                  </span>
-                )}
+                <span
+                  className={`rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ${
+                    label === "BAY"
+                      ? "bg-teal-900/50 text-teal-300 ring-teal-700/60"
+                      : label === "IFS"
+                        ? "bg-indigo-900/50 text-indigo-300 ring-indigo-700/60"
+                        : "bg-slate-700/80 text-slate-200 ring-slate-600"
+                  }`}
+                >
+                  {label}
+                </span>
               </div>
               <ul className="mt-4 space-y-3 text-sm text-slate-300">
                 {member.tasks.BAY ? (
